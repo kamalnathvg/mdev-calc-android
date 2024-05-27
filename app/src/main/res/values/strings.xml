@@ -13,13 +13,15 @@
     <string name="buttonDecimal">.</string>
     <string name="buttonAdd">+</string>
     <string name="buttonSubtract">-</string>
-    <string name="buttonMultiply">X</string>
+    <string name="buttonMultiply">x</string>
     <string name="buttonDivide">/</string>
     <string name="buttonClearAll">AC</string>
     <string name="buttonClear">C</string>
     <string name="buttonEquals">=</string>
     <string name="buttonUnused">"?"</string>
     <string name="resultTextInitVal">0</string>
+    <string name="toolBarText">MDEV Calculator</string>
+
 
 
 </resources>

@@ -29,30 +29,36 @@ public class MainActivity extends AppCompatActivity {
     //OnClick Implementation for Numbers and Decimal
     public void onNumberClick(android.view.View view){
 
-        TextView textView = findViewById(R.id.resultText);
+        TextView resultText = findViewById(R.id.resultText);
         Button numButton = (Button) view;
         String clickedText = numButton.getText().toString();
 
-        Log.d("logger", clickedText + "Clicked!");
+        Log.d("logger", clickedText + " Clicked!");
 
         calculatorModel.addNumber(clickedText);
-        textView.setText(calculatorModel.getCurrentText());
+        resultText.setText(calculatorModel.getCurrentText());
 
     }
 
     public void onOperatorClick(android.view.View view){
-        TextView textView = findViewById(R.id.resultText);
+        TextView resultText = findViewById(R.id.resultText);
         Button operatorButton = (Button) view;
         String selectedOperator = operatorButton.getText().toString();
 
         Log.d("logger", "Operator clicked : " + selectedOperator);
 
+        calculatorModel.addOperator(selectedOperator);
+        resultText.setText(calculatorModel.getCurrentText());
 
 
     }
 
     public void onDecimalClick(android.view.View view){
+        Log.d("logger", "Decimal clicked." );
 
+        TextView resultText = findViewById(R.id.resultText);
+        calculatorModel.addDecimalPoint();
+        resultText.setText(calculatorModel.getCurrentText());
     }
 
 
