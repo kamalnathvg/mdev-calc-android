@@ -104,7 +104,7 @@ if last number is zero and a new operator is added, ignore the last number
     public void addDecimalPoint() {
 
         //if decimal point is pressed after an operator, add zero in front of it
-        if (calcOperators.contains(getLastNumberAsString())) {
+        if (calcOperators.contains(getLastCharacter())){
             currentText = currentText + "0.";
             updateOperatorsAndNumbers();
             return;
