@@ -183,10 +183,12 @@ if last number is zero and a new operator is added, ignore the last number
             if (numbersList.size() == 1) {
                 double finalResult = numbersList.get(0);
                 if (finalResult % 1 == 0) {
-                    int finalInt = (int) finalResult;
-                    return String.valueOf(finalInt);
+                    currentText = String.valueOf((int) finalResult);
+                }else{
+                    currentText = String.valueOf(finalResult);
                 }
-                return String.valueOf(finalResult);
+
+                return currentText;
             }
             return "N/A";
         }
