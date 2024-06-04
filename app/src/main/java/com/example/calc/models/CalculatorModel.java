@@ -196,11 +196,20 @@ if last number is zero and a new operator is added, ignore the last number
         public void updateOperatorsAndNumbers () {//TODO: Split this to two separate functions.
             numbersList.clear();
             operators.clear();
+            String[] numbersInString;
+            if (currentText.charAt(0) == '-'){
+                numbersList.add(0.0);
+                operators.add("-");
+                numbersInString = currentText.substring(1).split("[\\+\\-/x]");
+            }else{
 
-            String[] numbersinString = currentText.split("[\\+\\-/x]");
+                numbersInString = currentText.split("[\\+\\-/x]");
+            }
 
-            for (int i = 0; i < numbersinString.length; i++) {
-                double number = Double.parseDouble(numbersinString[i]);
+
+            Log.d("logger", numbersList.toString());
+            for (int i = 0; i < numbersInString.length; i++) {
+                double number = Double.parseDouble(numbersInString[i]);
                 numbersList.add(number);
             }
             Log.d("logger", "Numbers :" + numbersList);
